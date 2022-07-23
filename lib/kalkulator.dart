@@ -10,7 +10,9 @@ class kalkulator extends StatefulWidget {
 class _kalkulatorState extends State<kalkulator> {
   TextEditingController ctrAngka1 = TextEditingController();
   TextEditingController ctrAngka2 = TextEditingController();
-
+  int hasil = 0;
+  double hasilBagi = 0;
+  String hasilString = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class _kalkulatorState extends State<kalkulator> {
                 controller: ctrAngka1,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                      labelText: 'Input Angka1'
+                      labelText: 'Angka 1'
                 ),
               ),
             ),
@@ -34,21 +36,51 @@ class _kalkulatorState extends State<kalkulator> {
                 controller: ctrAngka2,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Input Angka2'
+                  labelText: 'Angka 2'
                 ),
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                ElevatedButton(onPressed: () {}, child: Text('+')),
-                ElevatedButton(onPressed: () {}, child: Text('-')),
-                ElevatedButton(onPressed: () {}, child: Text('*')),
-                ElevatedButton(onPressed: () {}, child: Text('/')),
+                FloatingActionButton(onPressed: () {
+                  int angka1 = int.parse(ctrAngka1.text);
+                  int angka2 = int.parse(ctrAngka2.text);
+                  setState((){
+                    hasil = angka1 + angka2;
+                    hasilString = hasil.toString();
+                  });
+                }, child: Text('+')),
+                FloatingActionButton(onPressed: () {
+                  int angka1 = int.parse(ctrAngka1.text);
+                  int angka2 = int.parse(ctrAngka2.text);
+                  setState((){
+                    hasil = angka1 - angka2;
+                    hasilString = hasil.toString();
+                  });
+                  }, child: Text('-')),
+                FloatingActionButton(onPressed: () {
+                  int angka1 = int.parse(ctrAngka1.text);
+                  int angka2 = int.parse(ctrAngka2.text);
+                  setState((){
+                    hasil = angka1 * angka2;
+                    hasilString = hasil.toString();
+                  });
+                }, child: Text('x')),
+                FloatingActionButton(onPressed: () {
+                  int angka1 = int.parse(ctrAngka1.text);
+                  int angka2 = int.parse(ctrAngka2.text);
+                  setState((){
+                    hasilBagi = angka1 / angka2;
+                    hasilString = hasilBagi.toString();
+                  });
+                }, child: Text(':')),
+
               ],
             ),
-            Padding(padding: EdgeInsets.only(top: 40),
-            child: Text('Hasil'),
+            Padding(padding: EdgeInsets.only(top: 30),
+            child: Text('Hasil = '+hasilString.toString(),
+            style: TextStyle(fontSize: 15, color: Colors.grey),),
             ),
           ],
         ),
