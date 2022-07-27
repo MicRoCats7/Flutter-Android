@@ -1,4 +1,6 @@
+import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:flutterkalkulator/listview.dart';
 
 class kalkulator extends StatefulWidget {
   const kalkulator({Key? key}) : super(key: key);
@@ -80,8 +82,18 @@ class _kalkulatorState extends State<kalkulator> {
             ),
             Padding(padding: EdgeInsets.only(top: 30),
             child: Text('Hasil = '+hasilString.toString(),
-            style: TextStyle(fontSize: 15, color: Colors.grey),),
+            style: TextStyle(fontSize: 15, color: Colors.grey),
             ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 50),
+              child: ElevatedButton(
+                child: Text('Berikutnya'),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Listview() ));
+                },
+              ),
+            )
           ],
         ),
       ),
