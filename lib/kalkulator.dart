@@ -88,7 +88,7 @@ class _kalkulatorState extends State<kalkulator> {
             Container(
               margin: EdgeInsets.only(top: 50),
               child: ElevatedButton(
-                child: Text('Berikutnya'),
+                child: Text('Berikut'),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Listview() ));
                 },

@@ -12,7 +12,7 @@ class MyData extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(10),
-        child: Text("Nama Saya $routeArgs"),
+        child: Text("Hey.... Nama Saya $routeArgs"),
       ),
     );
   }

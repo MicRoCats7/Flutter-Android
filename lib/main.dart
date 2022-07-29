@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkalkulator/Register.dart';
 import 'package:flutterkalkulator/kalkulator.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: const kalkulator(),
+      home: const Registrasi(),
     );
   }
 }

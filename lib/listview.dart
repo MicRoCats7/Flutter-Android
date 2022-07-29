@@ -10,7 +10,7 @@ class _ListviewState extends State<Listview> {
     "Amri",
     "Akbar",
     "Alwan",
-    "Jati",
+    "Danar",
     "Wira",
     "Bimo",
   ];
